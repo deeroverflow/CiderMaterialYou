@@ -1,0 +1,718 @@
+/* #region variables */
+@md-sys-typescale-display1-font: Roboto;
+@md-sys-typescale-display1-weight: Regular;
+@md-sys-typescale-display1-size: 64px;
+@md-sys-typescale-display1-line-height: 76px;
+@md-sys-typescale-display1-tracking: -0.5px;
+@md-sys-typescale-display2-font: Roboto;
+@md-sys-typescale-display2-weight: Regular;
+@md-sys-typescale-display2-size: 57px;
+@md-sys-typescale-display2-line-height: 64px;
+@md-sys-typescale-display2-tracking: -0.25px;
+@md-sys-typescale-display3-font: Roboto;
+@md-sys-typescale-display3-weight: Regular;
+@md-sys-typescale-display3-size: 45px;
+@md-sys-typescale-display3-line-height: 52px;
+@md-sys-typescale-display3-tracking: 0px;
+@md-sys-typescale-headline1-font: Roboto;
+@md-sys-typescale-headline1-weight: Regular;
+@md-sys-typescale-headline1-size: 36px;
+@md-sys-typescale-headline1-line-height: 44px;
+@md-sys-typescale-headline1-tracking: 0px;
+@md-sys-typescale-headline2-font: Roboto;
+@md-sys-typescale-headline2-weight: Regular;
+@md-sys-typescale-headline2-size: 32px;
+@md-sys-typescale-headline2-line-height: 40px;
+@md-sys-typescale-headline2-tracking: 0px;
+@md-sys-typescale-headline3-font: Roboto;
+@md-sys-typescale-headline3-weight: Regular;
+@md-sys-typescale-headline3-size: 28px;
+@md-sys-typescale-headline3-line-height: 36px;
+@md-sys-typescale-headline3-tracking: 0px;
+@md-sys-typescale-headline4-font: Roboto;
+@md-sys-typescale-headline4-weight: Regular;
+@md-sys-typescale-headline4-size: 24px;
+@md-sys-typescale-headline4-line-height: 32px;
+@md-sys-typescale-headline4-tracking: 0px;
+@md-sys-typescale-headline5-font: Roboto;
+@md-sys-typescale-headline5-weight: Regular;
+@md-sys-typescale-headline5-size: 22px;
+@md-sys-typescale-headline5-line-height: 28px;
+@md-sys-typescale-headline5-tracking: 0px;
+@md-sys-typescale-headline6-font: Roboto;
+@md-sys-typescale-headline6-weight: Regular;
+@md-sys-typescale-headline6-size: 18px;
+@md-sys-typescale-headline6-line-height: 24px;
+@md-sys-typescale-headline6-tracking: 0px;
+@md-sys-typescale-subhead1-font: Roboto;
+@md-sys-typescale-subhead1-weight: Medium;
+@md-sys-typescale-subhead1-size: 16px;
+@md-sys-typescale-subhead1-line-height: 24px;
+@md-sys-typescale-subhead1-tracking: 0.1px;
+@md-sys-typescale-subhead2-font: Roboto;
+@md-sys-typescale-subhead2-weight: Medium;
+@md-sys-typescale-subhead2-size: 14px;
+@md-sys-typescale-subhead2-line-height: 20px;
+@md-sys-typescale-subhead2-tracking: 0.1px;
+@md-sys-typescale-body1-font: Roboto;
+@md-sys-typescale-body1-weight: Regular;
+@md-sys-typescale-body1-size: 16px;
+@md-sys-typescale-body1-line-height: 24px;
+@md-sys-typescale-body1-tracking: 0.5px;
+@md-sys-typescale-body2-font: Roboto;
+@md-sys-typescale-body2-weight: Regular;
+@md-sys-typescale-body2-size: 14px;
+@md-sys-typescale-body2-line-height: 20px;
+@md-sys-typescale-body2-tracking: 0.25px;
+@md-sys-typescale-caption-font: Roboto;
+@md-sys-typescale-caption-weight: Regular;
+@md-sys-typescale-caption-size: 12px;
+@md-sys-typescale-caption-line-height: 16px;
+@md-sys-typescale-caption-tracking: 0.4px;
+@md-sys-typescale-button-font: Roboto;
+@md-sys-typescale-button-weight: Medium;
+@md-sys-typescale-button-size: 14px;
+@md-sys-typescale-button-line-height: 20px;
+@md-sys-typescale-button-tracking: 0.1px;
+@md-sys-typescale-overline-font: Roboto;
+@md-sys-typescale-overline-weight: Medium;
+@md-sys-typescale-overline-size: 12px;
+@md-sys-typescale-overline-line-height: 16px;
+@md-sys-typescale-overline-tracking: 0.5px;
+@md-sys-color-primary-light: #944a01;
+@md-sys-color-on-primary-light: #ffffff;
+@md-sys-color-primary-container-light: #ffdcc4;
+@md-sys-color-on-primary-container-light: #301400;
+@md-sys-color-secondary-light: #954a02;
+@md-sys-color-on-secondary-light: #ffffff;
+@md-sys-color-secondary-container-light: #ffdbc4;
+@md-sys-color-on-secondary-container-light: #311300;
+@md-sys-color-tertiary-light: #5e6300;
+@md-sys-color-on-tertiary-light: #ffffff;
+@md-sys-color-tertiary-container-light: #e3ea73;
+@md-sys-color-on-tertiary-container-light: #1b1d00;
+@md-sys-color-error-light: #ba1b1b;
+@md-sys-color-on-error-light: #ffffff;
+@md-sys-color-error-container-light: #ffdad4;
+@md-sys-color-on-error-container-light: #410001;
+@md-sys-color-outline-light: #84746a;
+@md-sys-color-background-light: #fcfcfc;
+@md-sys-color-on-background-light: #201a17;
+@md-sys-color-surface-light: #fcfcfc;
+@md-sys-color-on-surface-light: #201a17;
+@md-sys-color-surface-variant-light: #f4dfd3;
+@md-sys-color-on-surface-variant-light: #52443b;
+@md-sys-color-inverse-surface-light: #352f2b;
+@md-sys-color-inverse-on-surface-light: #faeee7;
+@md-sys-color-primary-dark: #ffb782;
+@md-sys-color-on-primary-dark: #502400;
+@md-sys-color-primary-container-dark: #723600;
+@md-sys-color-on-primary-container-dark: #ffdcc4;
+@md-sys-color-secondary-dark: #ffb783;
+@md-sys-color-on-secondary-dark: #512400;
+@md-sys-color-secondary-container-dark: #733600;
+@md-sys-color-on-secondary-container-dark: #ffdbc4;
+@md-sys-color-tertiary-dark: #c7cd5b;
+@md-sys-color-on-tertiary-dark: #2f3300;
+@md-sys-color-tertiary-container-dark: #464a00;
+@md-sys-color-on-tertiary-container-dark: #e3ea73;
+@md-sys-color-error-dark: #ffb4a9;
+@md-sys-color-on-error-dark: #680003;
+@md-sys-color-error-container-dark: #930006;
+@md-sys-color-on-error-container-dark: #ffdad4;
+@md-sys-color-outline-dark: #9f8d83;
+@md-sys-color-background-dark: #201a17;
+@md-sys-color-on-background-dark: #ece0da;
+@md-sys-color-surface-dark: #201a17;
+@md-sys-color-on-surface-dark: #ece0da;
+@md-sys-color-surface-variant-dark: #52443b;
+@md-sys-color-on-surface-variant-dark: #d7c3b8;
+@md-sys-color-inverse-surface-dark: #ece0da;
+@md-sys-color-inverse-on-surface-dark: #201a17;
+
+@md-sys-color-primary: @md-sys-color-primary-dark;
+@md-sys-color-on-primary: @md-sys-color-on-primary-dark;
+@md-sys-color-primary-container: @md-sys-color-primary-container-dark;
+@md-sys-color-on-primary-container: @md-sys-color-on-primary-container-dark;
+@md-sys-color-secondary: @md-sys-color-secondary-dark;
+@md-sys-color-on-secondary: @md-sys-color-on-secondary-dark;
+@md-sys-color-secondary-container: @md-sys-color-secondary-container-dark;
+@md-sys-color-on-secondary-container: @md-sys-color-on-secondary-container-dark;
+@md-sys-color-tertiary: @md-sys-color-tertiary-dark;
+@md-sys-color-on-tertiary: @md-sys-color-on-tertiary-dark;
+@md-sys-color-tertiary-container: @md-sys-color-tertiary-container-dark;
+@md-sys-color-on-tertiary-container: @md-sys-color-on-tertiary-container-dark;
+@md-sys-color-error: @md-sys-color-error-dark;
+@md-sys-color-on-error: @md-sys-color-on-error-dark;
+@md-sys-color-error-container: @md-sys-color-error-container-dark;
+@md-sys-color-on-error-container: @md-sys-color-on-error-container-dark;
+@md-sys-color-outline: @md-sys-color-outline-dark;
+@md-sys-color-background: @md-sys-color-background-dark;
+@md-sys-color-on-background: @md-sys-color-on-background-dark;
+@md-sys-color-surface: @md-sys-color-surface-dark;
+@md-sys-color-on-surface: @md-sys-color-on-surface-dark;
+@md-sys-color-surface-variant: @md-sys-color-surface-variant-dark;
+@md-sys-color-on-surface-variant: @md-sys-color-on-surface-variant-dark;
+@md-sys-color-inverse-surface: @md-sys-color-inverse-surface-dark;
+@md-sys-color-inverse-on-surface: @md-sys-color-inverse-on-surface-dark;
+
+@cardradius: 12px;
+
+/* the shit i have to manually add ugh */
+
+/* #endregion variables */
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+// import material icons for some emojeez for the buttons to have a changeable colour (and also make scaling easier)
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
+
+body{
+    font-family: 'Noto Sans', Roboto, sans-serif;
+}
+
+// end Font
+
+// Main App Body
+:root{
+    --keyColor: @md-sys-color-on-secondary-container;
+}
+
+#app.simplebg{
+    background: @md-sys-color-surface;
+}
+
+.app{
+    &-navigation{
+    background: @md-sys-color-surface;}
+    &-chrome{background: @md-sys-color-surface;}
+}
+
+#app-content{
+    background: unset;
+    border-left: unset;
+}
+
+#app{
+    color: @md-sys-color-on-surface-variant;
+}
+
+// Navigation Bar
+.search-input{
+    border-radius: 64px; // be lazy because getting the exact radius it would be as a circle is lame
+    border: unset;
+    &:focus{
+        border: unset;
+    }
+    &--icon{
+        background-image: unset;
+        font-family: 'Material Icons Round';
+        &::after{
+            font-size: 14pt;
+            color: @md-sys-color-on-primary-container;
+            display: block;
+            margin: 5px 0 0 10px;
+            content: 'search';
+        }
+    }
+}
+
+// User Menu
+.usermenu{
+    &-container{
+        --placeholder: 'to prevent error';
+    }
+    &-body{
+        background: red;
+    }
+}
+
+// Sidebar
+#app-sidebar{
+    background: unset;
+    width: 264px;
+}
+
+.app-sidebar{
+    &-item{
+        margin: 4px 0px;
+        &:active{
+            transform: unset;
+            border: unset;
+        }
+        &:hover{
+            background: #ece0da10;
+        }
+    }
+    &-content{
+        padding: 8px 12px 8px 8px;
+    }
+    &-header-text{
+        opacity: 1;
+        color: @md-sys-color-on-surface-variant;
+        margin: 12px 0px 6px 12px;
+        font-weight: 500;
+        font-size: 11pt;
+        font-family: 'Roboto';
+    }
+    &-item{
+        color: @md-sys-color-on-surface-variant;
+        font-weight: 500;
+        font-size: 11pt;
+        border-radius: 64px;
+        border: unset;
+        height: 46px;
+        align-items: center;
+        padding: 8px 12px;
+        .sidebar-icon > svg{
+            color: @md-sys-color-on-surface-variant;
+        }
+        &:hover{
+            border: unset;
+        }
+        &.active{
+            background: fade(@md-sys-color-secondary-container, 40%);
+            border: unset;
+            color: @md-sys-color-on-secondary-container;
+            &::after{
+                display: none;
+            }
+            .sidebar-icon > svg{
+                color: @md-sys-color-on-secondary-container;
+            }
+        }
+        .sidebar-icon{
+            height: 24px;
+            width: 24px;
+        }
+    }
+}
+
+// Home Tab
+.well{
+    background: transparent!important;
+    box-shadow: unset;
+}
+
+// Cards
+.mediaitem-artwork{
+    border-radius: calc(var(--mediaItemRadius) * 2);
+    box-shadow: unset!important;
+    &::after{
+        box-shadow: unset!important;
+    }
+}
+
+.cd-mediaitem{
+    // album arts
+    &-square{
+        border: unset;
+        &.mediaitem-card{
+            background: @md-sys-color-surface-variant;
+            box-shadow: unset;
+            &::after{
+                box-shadow: unset;
+            }
+            .info-rect-card{
+                &::before{
+                    background: @md-sys-color-surface-variant;
+                    filter: unset;
+                    pointer-events: none;
+                }
+            }
+            .artwork .mediaitem-artwork{
+                border-radius: calc(var(--mediaItemRadius) * 2);
+            }
+        }
+        // .mediaitem-artwork{
+        //     border-radius:4px!important;
+        // }
+        &.mediaitem-brick{
+            --webkit-none: "just an placeholder so vscode will shut the fuck up about an 'error'";
+        }
+    }
+    // list items
+    &-list-item{
+        box-shadow: none!important;
+        height: 64px; // googles 74px makes things way too big :pepeshrug:
+        border-radius: unset;
+    }
+}
+
+// Replace Explicit Icon with Google Material one
+.explicit-icon :not(div.song-name) { // not playback info because there is a bug.
+    background: unset!important;
+    margin-top: unset!important;
+    filter: unset!important;
+    &::after{
+        font-family: 'Material Icons Round';
+        font-size: 10pt;
+        color: @md-sys-color-on-surface-variant;
+        display: flex;
+        content: 'explicit';
+    }
+}
+// Media
+.app-playback-controls{
+    .svg-icon{
+        background: @md-sys-color-on-surface;
+    }
+}
+
+.playback-button{
+    font-family: 'Material Icons Round';
+    &.previous, &.next, &.pause, &.play{
+        background-image: unset;
+        &::after{
+            font-size: 18pt;
+            color: @md-sys-color-on-surface;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+    &.previous::after{
+        content: "skip_previous";
+    }
+    &.next::after{
+        content: "skip_next";
+    }
+    &.play::after{
+        content: "play_arrow";
+    }
+    &.pause::after{
+        content: "pause";
+    }
+}
+
+.playback-button--small{
+    font-family: 'Material Icons Round';
+    &.shuffle, &.repeat, &.repeat.repeatOne, &.miniplayer, &.queue, &.lyrics{
+        background-image: unset;
+        &::after{
+            font-size: 14pt;
+            color: @md-sys-color-on-surface;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+    &.shuffle::after{
+        content: 'shuffle';
+    }
+    &.repeat{
+        &::after{
+            content: 'repeat';
+        }
+        &.repeatOne::after{
+            content: 'repeat_one';
+        }
+    }
+    &.miniplayer::after{
+        content: 'picture_in_picture_alt';
+    }
+    &.queue::after{
+        content: 'queue';
+    }
+    &.lyrics::after{
+        content: 'format_quote';
+        font-size: 18pt;
+    }
+}
+
+.playback-button:active, .playback-button--small:active{
+    --webkit-placeholder: "just here until i get an animation i want for button pressing";
+}
+
+.volume-button--small{
+    height: unset;
+    background-image: unset!important;
+    font-family: 'Material Icons Round';
+    &.active::after{
+            content: "volume_off"; 
+    }
+    &::after{
+        font-size: 14pt;
+        color: @md-sys-color-on-surface;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        content: "volume_up"; 
+    }
+}
+.app-chrome .app-chrome-item > .app-playback-controls .ppe-icon{
+    filter: unset; // pls just use svg fill :(((
+    height: unset;
+    background: unset!important;
+    font-family: 'Material Icons Round';
+    margin-right: 2px;
+    &::after{
+        font-size: 14pt;
+        color: @md-sys-color-on-surface;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        content: "token";
+        animation: opacityin 150ms cubic-bezier(0,.95,.82,1);
+    }
+}
+
+// Big Volume Slider
+.app-chrome .app-chrome-item.volume > input[type=range]{
+    background: @md-sys-color-on-surface-variant;
+    &::-webkit-slider-thumb{
+        box-shadow: unset;
+        transition: all ease .15s;
+        transform: scale(1);
+        background: @md-sys-color-on-surface-variant;
+        &:hover, &:active{
+            background: @md-sys-color-on-surface-variant;
+            transform: scale(1);
+        }
+        &:active{
+            transform: scale(1.25);
+        }
+    }
+}
+
+/* Window is smaller <= 1023px width */
+@media only screen and (max-width: 1120px) {
+    .display--small {
+        input[type=range] {
+            background: @md-sys-color-on-surface-variant;
+            &::-webkit-slider-thumb {
+                transition: all ease .15s;
+                transition-delay: none!important;
+                background: @md-sys-color-on-surface-variant;
+                box-shadow: unset!important;
+                transform: scale(1);
+            }
+  
+            &::-webkit-slider-thumb:hover {
+                background: @md-sys-color-on-surface-variant;
+                transform: scale(1);
+            }
+        
+            &::-webkit-slider-thumb:active {
+                background: @md-sys-color-on-surface-variant;
+                transform: scale(1.25);
+            }
+  
+            &::-webkit-slider-runnable-track {
+                -webkit-appearance: none;
+                box-shadow: none;
+                border: none;
+                background: transparent;
+            }
+        }
+    }
+}
+
+// Modals
+.modal{
+    &-fullscreen{
+        .modal-window::after{
+            box-shadow: unset!important;
+        }
+    }
+    &-window{
+        --modalBackground: @md-sys-color-surface;
+
+        border-radius: 24px!important; // yes, all of them.
+        background: @md-sys-color-surface!important; //force all modals to have the same background colour
+        box-shadow: unset!important;
+
+        .modal-title{
+            text-align: center;
+        }
+
+        .modal-content{
+            box-shadow: unset!important;
+        }
+    }
+    &-header{
+        align-items: center;
+        justify-content: center;
+        .close-btn{
+            border-radius: 50%;
+            height: 32px!important;
+            width: 32px!important;
+            top: unset!important;
+            margin-right: 10px;
+        }
+    }
+}
+
+// App Drawer
+@keyframes opacityin{
+    from{opacity:0;}
+}
+.app-drawer{
+    &.drawertransition-leave-active{
+        &::before{
+            opacity: 0;
+        }
+    }
+    &::before{
+        content: '';
+        opacity: 1;
+        width: 1000vw;
+        height: 1000vh;
+        position: absolute;
+        left: -100vw;
+        top: -100vh;
+        background: fade(black, 50%);
+        pointer-events: none;
+        transition: all 100ms ease;
+    }
+    overflow: unset!important;
+    background: @md-sys-color-surface-variant;
+    box-shadow: unset;
+    backdrop-filter: unset;
+}
+
+.autoplay{
+    .infinity{
+        &::after{
+            font-family: 'Material Icons Round';
+            font-size: 10pt;
+            color: @md-sys-color-on-surface-variant;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            content: 'all_inclusive';
+        }
+    }
+}
+
+// Navigation Bar
+#navigation-bar{
+    mix-blend-mode: unset!important;
+    backdrop-filter: unset!important;
+    background: transparent!important;
+    width: 86px;
+    height: 62px;
+    .nav-item{
+        height: 32px;
+        width: 32px;
+        border-radius: 16px;
+        color: @md-sys-color-surface-variant;
+        background: @md-sys-color-on-surface-variant;
+        z-index: 8;
+        &:hover{
+            color: lighten(@md-sys-color-surface-variant, 7%);
+            background: @md-sys-color-on-surface-variant;
+            svg{
+                color: unset!important;
+            }
+        }
+    }
+}
+
+.content-inner{
+    .row{
+        // fix bug with text shift
+        margin-left: calc(-0.5 * var(--bs-gutter-x))!important;
+    }
+    // theme creator information
+    &.about-page{
+        .row{
+            .col{
+                p:nth-child(4)::after {
+                    white-space: pre;
+                    margin-block-start: 1em;
+                    margin-block-end: 1em;
+                    display: block;
+                    content: "loosely-based Google Material You theme (without customisation) by deer#9999";
+                }
+            }
+        }
+    }
+    // library header
+    &.library-page{
+        top: 0;
+        .library-header{
+            padding: 0 2em 0 100px;
+            top: 0!important;
+        }
+        .well{
+            margin: 0em 2em 2em 2em;
+        }
+        .search-input{
+            height: 30px;
+        }
+    }
+}
+
+// volume (because it's waaaay too fucking small)
+.app-chrome .app-chrome-item.volume{
+    > input[type=range]{
+        width: 84px;
+    }
+}
+// iteration 2
+// #app-chrome{
+//     overflow: visible;
+// }
+// .app-chrome .app-chrome--center {
+//     width: 55%;
+//     position: absolute;
+//     top: 0;
+//     left: 50%;
+//     transform: translate(-50%, 0%);
+//     height: var(--chromeHeight);
+// }
+// .app-chrome .app-chrome--right{
+//     position: absolute;
+//     right: 0;
+//     width: 19%;
+//     height: var(--chromeHeight);
+// }
+// .app-chrome .app-chrome-item.volume{
+//     width: 100%;
+//     margin-right: unset;
+//     > input[type=range]{
+//         position: relative;
+//         left: 15px;
+//         transition: all 150ms ease;
+//         width: 0;
+//         &::-webkit-slider-thumb{
+//             background: transparent;
+//         }
+//     }
+//     &:hover{
+//         > input[type=range]{
+//             width: 100px;
+//             left: 0px;
+//             &::-webkit-slider-thumb{
+//                 background: @md-sys-color-on-surface-variant;
+//             }
+//         }
+//     }
+// }
+// iteration 3
+// .app-chrome--right{
+//     padding-left: 130px;
+// }
+// .app-chrome .app-chrome-item.volume{
+//     z-index: 9999999999;
+//     &:hover{
+//         height: 8000px;
+//         > input[type=range]{
+//             opacity: 1;
+//             right: 290px;
+//             width: 100px;
+//         }
+//     }
+//     > input[type=range]{
+//         position: absolute;
+//         opacity: 0;
+//         transition: all 200ms ease;
+//         width: 0px;
+//         transform: rotate3d(0,0,1,-90deg)
+//     }
+// }
