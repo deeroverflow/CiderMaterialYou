@@ -10,17 +10,17 @@ body{
 
 // Main App Body
 :root{
-    --keyColor: @md-sys-color-on-secondary-container;
+    --keyColor: @md-sys-color-on-secondary-container-dark;
 }
 
 #app.simplebg{
-    background: @md-sys-color-surface;
+    background: @md-sys-color-surface-dark;
 }
 
 .app{
     &-navigation{
-    background: @md-sys-color-surface;}
-    &-chrome{background: @md-sys-color-surface;}
+    background: @md-sys-color-surface-dark;}
+    &-chrome{background: @md-sys-color-surface-dark;}
 }
 
 #app-content{
@@ -29,7 +29,7 @@ body{
 }
 
 #app{
-    color: @md-sys-color-on-surface-variant;
+    color: @md-sys-color-on-surface-variant-dark;
 }
 
 // Navigation Bar
@@ -44,7 +44,7 @@ body{
         font-family: 'Material Icons Round';
         &::after{
             font-size: 14pt;
-            color: @md-sys-color-on-primary-container;
+            color: @md-sys-color-on-primary-container-dark;
             display: block;
             margin: 5px 0 0 10px;
             content: 'search';
@@ -84,14 +84,14 @@ body{
     }
     &-header-text{
         opacity: 1;
-        color: @md-sys-color-on-surface-variant;
+        color: @md-sys-color-on-surface-variant-dark;
         margin: 12px 0px 6px 12px;
         font-weight: 500;
         font-size: 11pt;
         font-family: 'Roboto';
     }
     &-item{
-        color: @md-sys-color-on-surface-variant;
+        color: @md-sys-color-on-surface-variant-dark;
         font-weight: 500;
         font-size: 11pt;
         border-radius: 64px;
@@ -100,20 +100,20 @@ body{
         align-items: center;
         padding: 8px 12px;
         .sidebar-icon > svg{
-            color: @md-sys-color-on-surface-variant;
+            color: @md-sys-color-on-surface-variant-dark;
         }
         &:hover{
             border: unset;
         }
         &.active{
-            background: fade(@md-sys-color-secondary-container, 40%);
+            background: fade(@md-sys-color-secondary-container-dark, 40%);
             border: unset;
-            color: @md-sys-color-on-secondary-container;
+            color: @md-sys-color-on-secondary-container-dark;
             &::after{
                 display: none;
             }
             .sidebar-icon > svg{
-                color: @md-sys-color-on-secondary-container;
+                color: @md-sys-color-on-secondary-container-dark;
             }
         }
         .sidebar-icon{
@@ -143,14 +143,14 @@ body{
     &-square{
         border: unset;
         &.mediaitem-card{
-            background: @md-sys-color-surface-variant;
+            background: @md-sys-color-surface-variant-dark;
             box-shadow: unset;
             &::after{
                 box-shadow: unset;
             }
             .info-rect-card{
                 &::before{
-                    background: @md-sys-color-surface-variant;
+                    background: @md-sys-color-surface-variant-dark;
                     filter: unset;
                     pointer-events: none;
                 }
@@ -182,7 +182,7 @@ body{
     &::after{
         font-family: 'Material Icons Round';
         font-size: 10pt;
-        color: @md-sys-color-on-surface-variant;
+        color: @md-sys-color-on-surface-variant-dark;
         display: flex;
         content: 'explicit';
     }
@@ -191,7 +191,7 @@ body{
 // Media
 .app-playback-controls{
     .svg-icon{
-        background: @md-sys-color-on-surface;
+        background: @md-sys-color-on-surface-dark;
     }
 }
 
@@ -201,7 +201,7 @@ body{
         background-image: unset;
         &::after{
             font-size: 18pt;
-            color: @md-sys-color-on-surface;
+            color: @md-sys-color-on-surface-dark;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -228,7 +228,7 @@ body{
         background-image: unset;
         &::after{
             font-size: 14pt;
-            color: @md-sys-color-on-surface;
+            color: @md-sys-color-on-surface-dark;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -271,7 +271,7 @@ body{
     }
     &::after{
         font-size: 14pt;
-        color: @md-sys-color-on-surface;
+        color: @md-sys-color-on-surface-dark;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -287,7 +287,7 @@ body{
     margin-right: 2px;
     &::after{
         font-size: 14pt;
-        color: @md-sys-color-on-surface;
+        color: @md-sys-color-on-surface-dark;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -299,14 +299,14 @@ body{
 
 // Big Volume Slider
 .app-chrome .app-chrome-item.volume > input[type=range]{
-    background: @md-sys-color-on-surface-variant;
+    background: @md-sys-color-on-surface-variant-dark;
     &::-webkit-slider-thumb{
         box-shadow: unset;
         transition: all ease .15s;
         transform: scale(1);
-        background: @md-sys-color-on-surface-variant;
+        background: @md-sys-color-on-surface-variant-dark;
         &:hover, &:active{
-            background: @md-sys-color-on-surface-variant;
+            background: @md-sys-color-on-surface-variant-dark;
             transform: scale(1);
         }
         &:active{
@@ -319,22 +319,22 @@ body{
 @media only screen and (max-width: 1120px) {
     .display--small {
         input[type=range] {
-            background: @md-sys-color-on-surface-variant;
+            background: @md-sys-color-on-surface-variant-dark;
             &::-webkit-slider-thumb {
                 transition: all ease .15s;
                 transition-delay: none!important;
-                background: @md-sys-color-on-surface-variant;
+                background: @md-sys-color-on-surface-variant-dark;
                 box-shadow: unset!important;
                 transform: scale(1);
             }
   
             &::-webkit-slider-thumb:hover {
-                background: @md-sys-color-on-surface-variant;
+                background: @md-sys-color-on-surface-variant-dark;
                 transform: scale(1);
             }
         
             &::-webkit-slider-thumb:active {
-                background: @md-sys-color-on-surface-variant;
+                background: @md-sys-color-on-surface-variant-dark;
                 transform: scale(1.25);
             }
   
@@ -356,10 +356,10 @@ body{
         }
     }
     &-window{
-        --modalBackground: @md-sys-color-surface;
+        --modalBackground: @md-sys-color-surface-dark;
 
         border-radius: 24px!important; // yes, all of them.
-        background: @md-sys-color-surface!important; //force all modals to have the same background colour
+        background: @md-sys-color-surface-dark!important; //force all modals to have the same background colour
         box-shadow: unset!important;
 
         .modal-title{
@@ -406,7 +406,7 @@ body{
         transition: all 100ms ease;
     }
     overflow: unset!important;
-    background: @md-sys-color-surface-variant;
+    background: @md-sys-color-surface-variant-dark;
     box-shadow: unset;
     backdrop-filter: unset;
 }
@@ -416,7 +416,7 @@ body{
         &::after{
             font-family: 'Material Icons Round';
             font-size: 10pt;
-            color: @md-sys-color-on-surface-variant;
+            color: @md-sys-color-on-surface-variant-dark;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -437,12 +437,12 @@ body{
         height: 32px;
         width: 32px;
         border-radius: 16px;
-        color: @md-sys-color-surface-variant;
-        background: @md-sys-color-on-surface-variant;
+        color: @md-sys-color-surface-variant-dark;
+        background: @md-sys-color-on-surface-variant-dark;
         z-index: 8;
         &:hover{
-            color: lighten(@md-sys-color-surface-variant, 7%);
-            background: @md-sys-color-on-surface-variant;
+            color: lighten(@md-sys-color-surface-variant-dark, 7%);
+            background: @md-sys-color-on-surface-variant-dark;
             svg{
                 color: unset!important;
             }
@@ -526,7 +526,7 @@ body{
 //             width: 100px;
 //             left: 0px;
 //             &::-webkit-slider-thumb{
-//                 background: @md-sys-color-on-surface-variant;
+//                 background: @md-sys-color-on-surface-variant-dark;
 //             }
 //         }
 //     }
