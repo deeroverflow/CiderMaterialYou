@@ -130,10 +130,15 @@
 @md-sys-color-inverse-surface-dark: #ece0da;
 @md-sys-color-inverse-on-surface-dark: #201a17;
 
+// interaction states
+@md-sys-state-hover-state-layer-opacity: 8%;
+@md-sys-state-focus-state-layer-opacity: 12%;
+@md-sys-state-pressed-state-layer-opacity: 12%;
+@md-sys-state-dragged-state-layer-opacity: 16%;
 
 // Font
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-// import material icons for some emojeez for the buttons to have a changeable colour (and also make scaling easier)
+// import material icons for some  buttons to have a changeable colour (and also make scaling easier)
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
 //@import url("src/.less");
 
@@ -271,11 +276,19 @@ body{
         box-shadow: unset!important;
     }
 }
-
+.cd-mediaitem-square .artwork-container > .play-btn :hover, .cd-mediaitem-square .artwork-container > .menu-btn :hover{}
 .cd-mediaitem{
     // album arts
     &-square{
         border: unset;
+        .artwork-container{
+            > .play-btn:hover, > .menu-btn:hover, > .play-btn :hover, > .menu-btn :hover{
+                background: @md-sys-color-primary-container-dark;
+                path{
+                    fill: @md-sys-color-on-primary-container-dark!important;
+                }
+            }
+        }
         &.mediaitem-card{
             background: @md-sys-color-surface-variant-dark;
             box-shadow: unset;
@@ -504,7 +517,7 @@ body{
             box-shadow: unset!important;
         }
     }
-    &-header{
+    &-header :not(.equalizer-panel){
         align-items: center;
         justify-content: center;
         .close-btn{
@@ -617,9 +630,47 @@ body{
             height: 30px;
         }
     }
+    &.playlist-page, &.artist-page{
+        .floating-header{
+            top: 0!important;
+            padding: 0 1em 0 100px;
+        }
+    }
+}
+:root{
+    --md-sys-color-on-secondary-dark: red;
+}
+.md{
+    // buttons :')
+    &-btn{
+        border-radius: 4px; // gotta get those buttons rounded somehow and i dont want to do math :')
+        border: 1px solid @md-sys-color-outline-dark;
+        color: @md-sys-color-on-secondary-container-dark;
+        background: unset;
+        height: 40px;
+        padding: 8px 24px;
+        transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        &:hover{
+            filter: unset!important;
+            background: fade(@md-sys-color-primary-dark, @md-sys-state-hover-state-layer-opacity);
+        }
+        &:active{
+            transform: none!important;
+            background: fade(@md-sys-color-primary-dark, @md-sys-state-pressed-state-layer-opacity);
+        }
+    }
+    //dropdowns
+    &-select{
+        background: unset!important;
+        border: 1px solid @md-sys-color-outline-dark;
+        border-radius: 4px;
+        height: 40px;
+        width: 100%;
+        min-width: 200px;
+    }
 }
 
-// volume (because it's waaaay too fucking small)
+// volume (because it's waaaay too small)
 .app-chrome .app-chrome-item.volume{
     > input[type=range]{
         width: 84px;
@@ -669,21 +720,24 @@ body{
 // .app-chrome--right{
 //     padding-left: 130px;
 // }
+// .app-chrome{
+//     overflow: visible!important;
+// }
 // .app-chrome .app-chrome-item.volume{
 //     z-index: 9999999999;
 //     &:hover{
 //         height: 8000px;
 //         > input[type=range]{
 //             opacity: 1;
-//             right: 290px;
-//             width: 100px;
 //         }
 //     }
 //     > input[type=range]{
+//         z-index: 9999999999;
 //         position: absolute;
 //         opacity: 0;
+//         right: 290px;
 //         transition: all 200ms ease;
-//         width: 0px;
+//         width: 100px;
 //         transform: rotate3d(0,0,1,-90deg)
 //     }
 // }
