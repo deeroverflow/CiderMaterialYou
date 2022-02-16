@@ -61,13 +61,10 @@
 // import material icons for some emojeez for the buttons to have a changeable colour (and also make scaling easier)
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
 //@import url("src/.less");
-
 body{
     font-family: 'Noto Sans', Roboto, sans-serif;
 }
-// end Font
 
-// Main App Body
 :root{
     --keyColor: @md-sys-color-on-secondary-container-dark;
 }
@@ -140,6 +137,7 @@ body{
         }
     }
 }
+
 // User Menu
 .usermenu{
     &-container{
@@ -260,6 +258,9 @@ body{
         border-radius: unset;
         &:hover{
             background: fade(@md-sys-color-on-surface-dark, @md-sys-state-hover-state-layer-opacity)!important;
+        }
+        &.mediaitem-selected{
+            background: fade(@md-sys-color-on-surface-dark, @md-sys-state-focus-state-layer-opacity)!important;
         }
         .overlay-play{border-radius: calc(var(--mediaItemRadius) * 2);}
     }
