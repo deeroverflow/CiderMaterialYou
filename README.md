@@ -1,6 +1,9 @@
 # Cider Material You
 cider theme based off of googles (incomplete) material you (without the customisation) guidelines
 
+# todo
+ - [ ] fix some buttons that arent themed
+
 PLEASE NOTE THERE MAY BE SOME BUGS!
 
 ![Home Tab](https://user-images.githubusercontent.com/32418685/154198992-02ecf329-f7fe-4a80-9838-c406b8eb23ed.png)
