@@ -4,6 +4,7 @@ cider theme based off of googles (incomplete) material you (without the customis
 # todo
  - [ ] fix some buttons that arent themed
  - [ ] fix cider menu
+ - [ ] style context menus
 
 
 PLEASE NOTE THERE MAY BE SOME BUGS!
