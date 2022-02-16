@@ -138,7 +138,7 @@
 
 // Font
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-// import material icons for some  buttons to have a changeable colour (and also make scaling easier)
+// import material icons for some emojeez for the buttons to have a changeable colour (and also make scaling easier)
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
 //@import url("src/.less");
 
@@ -171,19 +171,34 @@ body{
     color: @md-sys-color-on-surface-variant-dark;
 }
 
-// Navigation Bar
+// Search
 .search-input{
     border-radius: 64px; // be lazy because getting the exact radius it would be as a circle is lame
     border: unset;
+    color: @md-sys-color-on-surface-variant-dark;
+    background: @md-sys-color-surface-variant-dark !important;
+    filter: unset!important;
+    &-container{
+        input{
+            &::placeholder{
+                color: fade(@md-sys-color-on-primary-container-dark, 50%);
+            }
+            &::-webkit-search-cancel-button{
+                display: none; // i cant even change the colour of it for some reason so i'm just gettign rid of it
+            }
+        }
+    }
     &:focus{
         border: unset;
     }
     &--icon{
         background-image: unset;
         font-family: 'Material Icons Round';
+        z-index: 1;
+        opacity: 1;
         &::after{
             font-size: 14pt;
-            color: @md-sys-color-on-primary-container-dark;
+            color: @md-sys-color-on-surface-variant-dark;
             display: block;
             margin: 5px 0 0 10px;
             content: 'search';
@@ -191,13 +206,29 @@ body{
     }
 }
 
+.search-hints-container{
+    .search-hints{
+        box-shadow: none!important;
+        background: @md-sys-color-surface-variant-dark;
+        border-radius: 8px;
+        top: 36px;
+        padding: 6px 0px;
+        .search-hint{
+            border-radius: 0px;
+            &:hover{
+                background: fade(@md-sys-color-on-surface-variant-dark, 50%);
+            }
+        }
+    }
+}
 // User Menu
 .usermenu{
     &-container{
         --placeholder: 'to prevent error';
-    }
-    &-body{
-        background: red;
+        &-body{
+            background: red;
+            box-shadow: unset;
+        }
     }
 }
 
@@ -276,7 +307,8 @@ body{
         box-shadow: unset!important;
     }
 }
-.cd-mediaitem-square .artwork-container > .play-btn :hover, .cd-mediaitem-square .artwork-container > .menu-btn :hover{}
+// idk what i was gonna use this for
+// .cd-mediaitem-square .artwork-container > .play-btn :hover, .cd-mediaitem-square .artwork-container > .menu-btn :hover{}
 .cd-mediaitem{
     // album arts
     &-square{
@@ -289,6 +321,7 @@ body{
                 }
             }
         }
+        
         &.mediaitem-card{
             background: @md-sys-color-surface-variant-dark;
             box-shadow: unset;
@@ -306,9 +339,6 @@ body{
                 border-radius: calc(var(--mediaItemRadius) * 2);
             }
         }
-        // .mediaitem-artwork{
-        //     border-radius:4px!important;
-        // }
         &.mediaitem-brick{
             --webkit-none: "just an placeholder so vscode will shut up about an 'error'";
         }
@@ -318,6 +348,9 @@ body{
         box-shadow: none!important;
         height: 64px; // googles 74px makes things way too big :pepeshrug:
         border-radius: unset;
+        .overlay-play{
+            border-radius: calc(var(--mediaItemRadius) * 2);
+        }
     }
 }
 
@@ -637,9 +670,7 @@ body{
         }
     }
 }
-:root{
-    --md-sys-color-on-secondary-dark: red;
-}
+
 .md{
     // buttons :')
     &-btn{
@@ -662,11 +693,52 @@ body{
     //dropdowns
     &-select{
         background: unset!important;
+        color: @md-sys-color-on-secondary-container-dark;
         border: 1px solid @md-sys-color-outline-dark;
         border-radius: 4px;
         height: 40px;
         width: 100%;
         min-width: 200px;
+        optgroup{
+            border-radius: 24px;
+        }
+    }
+}
+
+// switches
+input[type=checkbox][switch]{
+    width: 32px;
+    height: 14px;
+    transition: background 150ms ease;
+    &:checked{
+        background: @md-sys-color-on-secondary-container-dark;
+        &::before{
+            background: desaturate(@md-sys-color-primary-dark, 15%);
+        }
+        &:active{
+            background: @md-sys-color-on-secondary-container-dark;
+            &::before{
+                left: 13px;
+                background: desaturate(@md-sys-color-primary-dark, 15%);
+            }
+        }
+        &:hover{
+            background: @md-sys-color-on-secondary-container-dark;
+        }
+    }
+    &:active::before{left: -7px};
+    &:not(:checked){
+        background: fade(@md-sys-color-on-secondary-container-dark, 445%);
+        &::before{
+            background: desaturate(@md-sys-color-primary-dark, 45%);
+        }
+    }
+    &::before{
+        top: -6px!important;
+        left: -7px;
+        &:checked{
+            left: 13px;
+        }
     }
 }
 
