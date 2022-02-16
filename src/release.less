@@ -61,10 +61,31 @@
 // import material icons for some emojeez for the buttons to have a changeable colour (and also make scaling easier)
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
 //@import url("src/.less");
+
+
+//beta warning (for now)
+#app::after{
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    padding: 8px 24px;
+    font-size: 10pt;
+    z-index: 99999999999999;
+    background: orangered;
+    content: "heads up you bozo,\ayou're running a local copy\aof your theme (theme.less)";
+    white-space: pre-wrap;
+    pointer-events: none;
+    opacity: 0.55;
+    border-radius: 24px;
+}
+
+
 body{
     font-family: 'Noto Sans', Roboto, sans-serif;
 }
+// end Font
 
+// Main App Body
 :root{
     --keyColor: @md-sys-color-on-secondary-container-dark;
 }
@@ -137,7 +158,6 @@ body{
         }
     }
 }
-
 // User Menu
 .usermenu{
     &-container{
@@ -160,6 +180,34 @@ body{
     }
 }
 
+// main menu
+.app-chrome .app-chrome-item > .app-mainmenu{
+    background: unset;
+    background-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: @md-sys-color-on-surface-variant-dark;
+    &:hover{
+        background: @md-sys-color-primary-container-dark;
+    }
+    &.active{
+        background: red;
+    }
+    &::before{
+        background-image: url('https://cdn.discordapp.com/attachments/912441248298696775/935348933213970442/Cider-Logo.png');
+        background-size: 32px;
+        width: 32px;
+        height: 32px;
+        content: '';
+        margin-right: 8px;
+    }
+    &::after{
+        font-size: 13pt;
+        font-weight: 600;
+        content: 'Cider';
+    }
+}
 // Sidebar
 #app-sidebar{
     background: unset;
@@ -601,11 +649,6 @@ body{
         padding: 8px 24px;
         transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
         align-self: center;
-        &-btn.md-btn-icon{
-            display: inline-block;
-            vertical-align: unset;
-            justify-content: unset;
-        }
         &:hover{
             filter: unset!important;
             background: fade(@md-sys-color-primary-dark, @md-sys-state-hover-state-layer-opacity);
@@ -623,6 +666,11 @@ body{
                 background: red!important;
             }
         }
+    }
+    &-btn.md-btn-icon{
+        display: inline-block;
+        vertical-align: unset;
+        justify-content: unset;
     }
     &-ico-play, &-ico-shuffle{
         display: none;
