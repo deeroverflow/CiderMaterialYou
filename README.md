@@ -3,7 +3,7 @@ cider theme based off of googles (incomplete) material you (without the customis
 
 # todo
  - [ ] fix some buttons that arent themed (in progress)
- - [ ] fix cider menu (in progress)
+ - [x] fix cider menu (in progress)
  - [ ] style context menus
  - [ ] style toasts
 
