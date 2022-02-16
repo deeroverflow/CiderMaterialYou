@@ -65,7 +65,6 @@
 body{
     font-family: 'Noto Sans', Roboto, sans-serif;
 }
-// end Font
 
 // Main App Body
 :root{
@@ -142,9 +141,9 @@ body{
 }
 // User Menu
 .usermenu{
-    &-container{
-        --placeholder: 'to prevent error';
-    }
+    // &-container{
+    //     --placeholder: 'to prevent error';
+    // }
     &-body{
         box-shadow: unset!important;
         background: @md-sys-color-surface-variant-dark!important;
@@ -159,6 +158,35 @@ body{
     &-item{
         color: @md-sys-color-on-surface-variant-dark!important;
         &:hover{background: fade(@md-sys-color-on-surface-variant-dark, 40%)!important;}
+    }
+}
+
+// main menu
+.app-chrome .app-chrome-item > .app-mainmenu{
+    background: unset;
+    background-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: @md-sys-color-on-surface-variant-dark;
+    &:hover{
+        background: @md-sys-color-primary-container-dark;
+    }
+    &.active{
+        background: red;
+    }
+    &::before{
+        background-image: url('https://cdn.discordapp.com/attachments/912441248298696775/935348933213970442/Cider-Logo.png');
+        background-size: 32px;
+        width: 32px;
+        height: 32px;
+        content: '';
+        margin-right: 8px;
+    }
+    &::after{
+        font-size: 13pt;
+        font-weight: 600;
+        content: 'Cider';
     }
 }
 // Sidebar
@@ -222,8 +250,10 @@ body{
     box-shadow: unset!important;
     &::after{box-shadow: unset!important;}
 }
+
 // idk what i was gonna use this for
 // .cd-mediaitem-square .artwork-container > .play-btn :hover, .cd-mediaitem-square .artwork-container > .menu-btn :hover{}
+
 .cd-mediaitem{
     // album arts
     &-square{
@@ -495,7 +525,29 @@ body{
         }
     }
 }
-
+// Context Menus
+.menu{
+    &-panel &-panel-body{
+        background: @md-sys-color-surface-variant-dark;
+        box-shadow: 0 8px 40px rgb(0 0 0 / 0.55);
+    }
+    &-panel &-body{
+        padding-bottom: 8px;
+    }
+    &-option{
+        background: red;
+        &:hover{background: fade(@md-sys-color-on-surface-variant-dark, 15%)!important;}
+    }
+    &-panel-body &-header-body{
+        background: rgb(200 200 200 / 5%); // luke please change this later istg if you forget this lol
+    }
+    &-panel{
+        .sidebar-icon > .svg-icon{
+            --color: @md-sys-color-on-surface-variant-dark;
+        }
+    }
+}
+// the pages
 .content-inner{
     .row{
         // fix bug with text shift
@@ -510,7 +562,7 @@ body{
                     margin-block-start: 1em;
                     margin-block-end: 1em;
                     display: block;
-                    content: "loosely-based Google Material You theme (without customisation) by deer#9999\aGMY v1.0.1";
+                    content: "loosely-based Google Material You theme (without customisation) by deer#9999\aGMY v0.0.11";
                 }
             }
         }
@@ -684,6 +736,7 @@ input[type=checkbox][switch]{
         width: 84px;
     }
 }
+
 // iteration 2
 // #app-chrome{
 //     overflow: visible;
