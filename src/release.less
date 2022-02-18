@@ -305,6 +305,9 @@ body{
 // Media
 .app-playback-controls{
     .svg-icon{background: @md-sys-color-on-surface-dark;}
+    .artwork{
+        box-shadow: unset!important;
+    }
 }
 
 .playback-button{
@@ -565,7 +568,7 @@ body{
             top: 0!important;
         }
         .row .col{
-            padding-right: 10px;
+            padding-right: 10px!important;
         }
         .well{
             margin: 0em 2em 2em 2em;
@@ -634,7 +637,7 @@ body{
 }
 
 .reload-btn{
-    background: #52443b;
+    background: @md-sys-color-surface-variant-dark;
     svg{
         display: none;
     }
