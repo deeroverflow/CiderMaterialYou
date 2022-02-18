@@ -139,7 +139,6 @@ body{
         }
     }
 }
-
 // User Menu
 .usermenu{
     // &-container{
@@ -162,7 +161,6 @@ body{
     }
 }
 
-// this will be redone vvvv
 // main menu
 .app-chrome .app-chrome-item > .app-mainmenu{
     display: flex;
@@ -239,7 +237,7 @@ body{
     &::after{box-shadow: unset!important;}
 }
 
-// idk what i was gonna use this for
+// idk what i was gonna use this for but im leaving it here in case i do need it
 // .cd-mediaitem-square .artwork-container > .play-btn :hover, .cd-mediaitem-square .artwork-container > .menu-btn :hover{}
 
 .cd-mediaitem{
@@ -528,7 +526,6 @@ body{
         padding-bottom: 8px;
     }
     &-option{
-        background: red;
         &:hover{background: fade(@md-sys-color-on-surface-variant-dark, 15%)!important;}
     }
     &-panel-body &-header-body{
@@ -578,6 +575,19 @@ body{
         .floating-header{
             top: 0!important;
             padding: 0 1em 0 100px;
+        }
+    }
+    &.playlist-page.inline-playlist{
+        margin-top: -62px;
+        .playlist-inner{
+            box-shadow: unset!important;
+            border-radius: 16px 16px 0 0;
+            background: @md-sys-color-surface-dark;
+            .floating-header{
+                padding: 1em!important;
+                background: @md-sys-color-surface-dark;
+                border-bottom: unset!important;
+            }
         }
     }
     &.settings-page{
