@@ -8,8 +8,8 @@ PLEASE NOTE THERE MAY BE SOME BUGS!
 ![Browse Tab](https://user-images.githubusercontent.com/32418685/154199111-f0d7366c-40e7-4146-a255-24e35210043b.png)
 
 # todo
- - [ ] style context menus (initial support)
+ - [ ] inline playlists (partial support)
+ - [ ] style context menus (partial support)
  - [ ] style toasts
- - [ ] theme inline playlists
  - [ ] filled button transitions and interaction animations
  - [ ] scrollbars
