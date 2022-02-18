@@ -139,6 +139,7 @@ body{
         }
     }
 }
+
 // User Menu
 .usermenu{
     // &-container{
@@ -158,6 +159,21 @@ body{
     &-item{
         color: @md-sys-color-on-surface-variant-dark!important;
         &:hover{background: fade(@md-sys-color-on-surface-variant-dark, 40%)!important;}
+    }
+}
+
+// this will be redone vvvv
+// main menu
+.app-chrome .app-chrome-item > .app-mainmenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: @md-sys-color-on-surface-variant-dark;
+    &:hover{
+        background-color: fade(@md-sys-color-on-surface-dark, @md-sys-state-hover-state-layer-opacity);
+    }
+    &.active{
+        background-color: fade(@md-sys-color-on-surface-dark, @md-sys-state-pressed-state-layer-opacity);
     }
 }
 
@@ -188,8 +204,7 @@ body{
     &-item{
         color: @md-sys-color-on-surface-variant-dark;
         font-weight: 500;
-        font-size: 
-            pt;
+        font-size: 11pt;
         border-radius: 64px;
         border: unset;
         height: 46px;
@@ -510,7 +525,7 @@ body{
         box-shadow: 0 8px 40px rgb(0 0 0 / 0.55);
     }
     &-panel &-body{
-//        padding-bottom: 8px; // removed for now until i properly finish context menus
+        padding-bottom: 8px;
     }
     &-option{
         background: red;
@@ -540,7 +555,7 @@ body{
                     margin-block-start: 1em;
                     margin-block-end: 1em;
                     display: block;
-                    content: "loosely-based Google Material You theme (without customisation) by deer#9999\aGMY v0.0.13";
+                    content: "loosely-based Google Material You theme (without customisation) by deer#9999\aGMY v0.0.1";
                 }
             }
         }
