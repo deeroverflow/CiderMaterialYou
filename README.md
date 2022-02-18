@@ -1,14 +1,13 @@
 # Cider Material You
 cider theme based off of googles (incomplete) material you (without the customisation) guidelines
 
-PLEASE NOTE THERE MAY BE SOME BUGS!
+PLEASE NOTE THERE MAY BE SOME BUGS
+![Home Tab](https://user-images.githubusercontent.com/32418685/154732856-c0e02c1d-94e4-45cb-a314-507d5ec3ac11.png)
+![Songs Tab](https://user-images.githubusercontent.com/32418685/154732896-48364df7-64fb-4bcc-aab4-cdb0c01ad7df.png)
+![Browse Tab](https://user-images.githubusercontent.com/32418685/154733075-9975cd5b-90e8-4cde-9d8e-209085fcc46f.png)
 
-![Home Tab](https://user-images.githubusercontent.com/32418685/154198992-02ecf329-f7fe-4a80-9838-c406b8eb23ed.png)
-![Songs Tab](https://user-images.githubusercontent.com/32418685/154198884-05758d19-64b5-4b00-91a2-041148ced903.png)
-![Browse Tab](https://user-images.githubusercontent.com/32418685/154199111-f0d7366c-40e7-4146-a255-24e35210043b.png)
 
 # todo
- - [ ] inline playlists (partial support)
  - [ ] style context menus (partial support)
  - [ ] style toasts
  - [ ] filled button transitions and interaction animations
