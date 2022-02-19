@@ -1,0 +1,789 @@
+// variables
+@import "http://localhost:9000/themes/CiderMaterialYou-beta/src/_colors.less";
+
+// interaction states
+@md-sys-state-hover-state-layer-opacity: 8%;
+@md-sys-state-focus-state-layer-opacity: 12%;
+@md-sys-state-pressed-state-layer-opacity: 12%;
+@md-sys-state-dragged-state-layer-opacity: 16%;
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+// import material icons for some emojeez for the buttons to have a changeable colour (and also make scaling easier)
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
+//@import url("src/.less");
+
+// local warning (because i'm dumb)
+// #app::after{
+//     position: absolute;
+//     bottom: 14px;
+//     right: 14px;
+//     padding: 8px 24px;
+//     font-size: 10pt;
+//     z-index: 99999999999999;
+//     background: orangered;
+//     content: "heads up you bozo,\ayou're running a local copy\aof your theme (theme.less)";
+//     white-space: pre-wrap;
+//     pointer-events: none;
+//     opacity: 0.55;
+//     border-radius: 24px;
+// }
+
+body{
+    font-family: 'Noto Sans', Roboto, sans-serif;
+}
+
+// Main App Body
+:root{
+    --keyColor: @md-sys-color-on-secondary-container-dark;
+}
+
+#app.simplebg{
+    background: @md-sys-color-surface-dark;
+}
+
+.app{
+    &-navigation{
+    background: @md-sys-color-surface-dark;}
+    &-chrome{background: @md-sys-color-surface-dark;}
+}
+
+#app-content{
+    background: unset;
+    border-left: unset;
+}
+
+#app{
+    color: @md-sys-color-on-surface-variant-dark;
+}
+
+// Search
+.search-input{
+    border-radius: 64px; // be lazy because getting the exact radius it would be as a circle is lame
+    border: unset;
+    color: @md-sys-color-on-surface-variant-dark;
+    background: @md-sys-color-surface-variant-dark !important;
+    filter: unset!important;
+    &-container{
+        input{
+            &::placeholder{
+                color: fade(@md-sys-color-on-primary-container-dark, 50%);
+            }
+            &::-webkit-search-cancel-button{
+                display: none; // i cant even change the colour of it for some reason so i'm just gettign rid of it
+            }
+        }
+    }
+    &:focus{
+        border: unset;
+    }
+    &--icon{
+        background-image: unset;
+        font-family: 'Material Icons Round';
+        z-index: 1;
+        opacity: 1;
+        &::after{
+            font-size: 14pt;
+            color: @md-sys-color-on-surface-variant-dark;
+            display: block;
+            margin: 5px 0 0 10px;
+            content: 'search';
+        }
+    }
+}
+
+.search-hints-container{
+    .search-hints{
+        box-shadow: none!important;
+        background: @md-sys-color-surface-variant-dark;
+        border-radius: 8px;
+        top: 36px;
+        padding: 6px 0px;
+        .search-hint{
+            border-radius: 0px;
+            color: @md-sys-color-on-surface-variant-dark!important;
+            &:hover{background: fade(@md-sys-color-on-surface-variant-dark, 15%);}
+        }
+    }
+}
+// User Menu
+.usermenu{
+    // &-container{
+    //     --placeholder: 'to prevent error';
+    // }
+    &-body{
+        box-shadow: unset!important;
+        background: @md-sys-color-surface-variant-dark!important;
+        border-radius: 8px!important;
+        .app-sidebar-button{
+            background: fade(@md-sys-color-secondary-dark, 15%);
+            color: @md-sys-color-on-surface-variant-dark!important;
+            border: unset!important;
+            border-radius: 8px!important;
+        }
+    }
+    &-item{
+        color: @md-sys-color-on-surface-variant-dark!important;
+        &:hover{background: fade(@md-sys-color-on-surface-variant-dark, 40%)!important;}
+    }
+}
+
+// main menu
+.app-chrome .app-chrome-item > .app-mainmenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: @md-sys-color-on-surface-variant-dark;
+    &:hover{
+        background-color: fade(@md-sys-color-on-surface-dark, @md-sys-state-hover-state-layer-opacity);
+    }
+    &.active{
+        background-color: fade(@md-sys-color-on-surface-dark, @md-sys-state-pressed-state-layer-opacity);
+    }
+}
+
+// Sidebar
+#app-sidebar{
+    background: unset;
+    width: 264px;
+}
+
+.app-sidebar{
+    &-item{
+        margin: 4px 0px;
+        &:active{
+            transform: unset;
+            border: unset;
+        }
+        &:hover{background: fade(@md-sys-color-on-surface-dark, @md-sys-state-hover-state-layer-opacity);}
+    }
+    &-content{padding: 8px 12px 8px 8px;}
+    &-header-text{
+        opacity: 1;
+        color: @md-sys-color-on-surface-variant-dark;
+        margin: 12px 0px 6px 12px;
+        font-weight: 500;
+        font-size: 11pt;
+        font-family: 'Roboto';
+    }
+    &-item{
+        color: @md-sys-color-on-surface-variant-dark;
+        font-weight: 500;
+        font-size: 11pt;
+        border-radius: 64px;
+        border: unset;
+        height: 46px;
+        align-items: center;
+        padding: 8px 12px;
+        .sidebar-icon > svg{color: @md-sys-color-on-surface-variant-dark;}
+        &:hover{border: unset;}
+        &.active{
+            background: fade(@md-sys-color-secondary-container-dark, 40%);
+            border: unset;
+            color: @md-sys-color-on-secondary-container-dark;
+            &::after{display: none;}
+            .sidebar-icon > svg{color: @md-sys-color-on-secondary-container-dark;}
+        }
+        .sidebar-icon{
+            height: 24px;
+            width: 24px;
+        }
+    }
+}
+
+// Home Tab
+.well{
+    background: transparent!important;
+    box-shadow: unset;
+}
+
+// Cards
+.mediaitem-artwork{
+    border-radius: calc(var(--mediaItemRadius) * 2);
+    box-shadow: unset!important;
+    &::after{box-shadow: unset!important;}
+}
+
+// idk what i was gonna use this for
+// .cd-mediaitem-square .artwork-container > .play-btn :hover, .cd-mediaitem-square .artwork-container > .menu-btn :hover{}
+
+.cd-mediaitem{
+    // album arts
+    &-square{
+        border: unset;
+        .artwork-container{
+            > .play-btn:hover, > .menu-btn:hover, > .play-btn :hover, > .menu-btn :hover{
+                background: @md-sys-color-surface-variant-dark;
+                path{fill: @md-sys-color-on-primary-container-dark!important;}
+            }
+        }
+        
+        &.mediaitem-card{
+            background: @md-sys-color-surface-variant-dark;
+            box-shadow: unset;
+            &::after{box-shadow: unset;}
+            .info-rect-card{
+                &::before{
+                    background: @md-sys-color-surface-variant-dark;
+                    filter: unset;
+                    pointer-events: none;
+                }
+            }
+            .artwork .mediaitem-artwork{border-radius: calc(var(--mediaItemRadius) * 2);}
+        }
+        &.mediaitem-brick{
+            --webkit-none: "just an placeholder so vscode will shut up about an 'error'";
+        }
+    }
+    // list items
+    &-list-item{
+        box-shadow: none!important;
+        height: 64px; // googles 74px makes things way too big :pepeshrug:
+        border-radius: unset;
+        &:hover{
+            background: fade(@md-sys-color-on-surface-dark, @md-sys-state-hover-state-layer-opacity)!important;
+        }
+        &:active{
+            color: saturate(@md-sys-color-on-surface-variant-dark, @md-sys-state-pressed-state-layer-opacity);
+            background: fade(@md-sys-color-on-surface-dark, @md-sys-state-pressed-state-layer-opacity)!important;
+            
+        }
+        &.mediaitem-selected{
+            background: fade(@md-sys-color-on-surface-dark, @md-sys-state-focus-state-layer-opacity)!important;
+        }
+        .overlay-play{border-radius: calc(var(--mediaItemRadius) * 2);}
+    }
+}
+
+// Replace Explicit Icon with Google Material one
+.explicit-icon :not(div.song-name) { // not playback info because there is a bug.
+    background: unset!important;
+    margin-top: unset!important;
+    filter: unset!important;
+    &::after{
+        font-family: 'Material Icons Round';
+        font-size: 10pt;
+        color: @md-sys-color-on-surface-variant-dark;
+        display: flex;
+        content: 'explicit';
+    }
+}
+
+// Media
+.app-playback-controls{
+    .svg-icon{background: @md-sys-color-on-surface-dark;}
+    .artwork{
+        box-shadow: unset!important;
+    }
+}
+
+.playback-button{
+    font-family: 'Material Icons Round';
+    &.previous, &.next, &.pause, &.play{
+        background-image: unset;
+        &::after{
+            font-size: 18pt;
+            color: @md-sys-color-on-surface-dark;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+    &.previous::after {content: "skip_previous";}
+    &.next::after     {content: "skip_next";}
+    &.play::after     {content: "play_arrow";}
+    &.pause::after    {content: "pause";}
+}
+
+.playback-button--small{
+    font-family: 'Material Icons Round';
+    &.shuffle, &.repeat, &.repeat.repeatOne, &.miniplayer, &.queue, &.lyrics{
+        background-image: unset;
+        &::after{
+            font-size: 14pt;
+            color: @md-sys-color-on-surface-dark;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+    &.shuffle::after{content: 'shuffle';}
+    &.repeat{
+        &::after{content: 'repeat';}
+        &.repeatOne::after{content: 'repeat_one';}
+    }
+    &.miniplayer::after{content: 'picture_in_picture_alt';}
+    &.queue::after{content: 'queue';}
+    &.lyrics::after{
+        content: 'format_quote';
+        font-size: 18pt;
+    }
+}
+
+.playback-button:active, .playback-button--small:active{
+    --webkit-placeholder: "just here until i get an animation i want for button pressing";
+}
+.volume-button--small{
+    height: unset;
+    background-image: unset!important;
+    font-family: 'Material Icons Round';
+    &.active::after{content: "volume_off";}
+    &::after{
+        font-size: 14pt;
+        color: @md-sys-color-on-surface-dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        content: "volume_up"; 
+    }
+}
+.app-chrome .app-chrome-item > .app-playback-controls .ppe-icon{
+    filter: unset; // pls just use svg fill :(((
+    height: unset;
+    background: unset!important;
+    font-family: 'Material Icons Round';
+    margin-right: 2px;
+    &::after{
+        font-size: 14pt;
+        color: @md-sys-color-on-surface-dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        content: "token";
+        animation: opacityin 150ms cubic-bezier(0,.95,.82,1);
+    }
+}
+
+// Big Volume Slider
+.app-chrome .app-chrome-item.volume > input[type=range]{
+    background: @md-sys-color-on-surface-variant-dark;
+    &::-webkit-slider-thumb{
+        box-shadow: unset;
+        transition: all ease .15s;
+        transform: scale(1);
+        background: @md-sys-color-on-surface-variant-dark;
+        &:hover, &:active{
+            background: @md-sys-color-on-surface-variant-dark;
+            transform: scale(1);
+        }
+        &:active{
+            transform: scale(1.25);
+        }
+    }
+}
+
+/* Window is smaller <= 1023px width */
+@media only screen and (max-width: 1120px) {
+    .display--small {
+        input[type=range] {
+            background: @md-sys-color-on-surface-variant-dark;
+            &::-webkit-slider-thumb {
+                transition: all ease .15s;
+                transition-delay: none!important;
+                background: @md-sys-color-on-surface-variant-dark;
+                box-shadow: unset!important;
+                transform: scale(1);
+            }
+  
+            &::-webkit-slider-thumb:hover {
+                background: @md-sys-color-on-surface-variant-dark;
+                transform: scale(1);
+            }
+        
+            &::-webkit-slider-thumb:active {
+                background: @md-sys-color-on-surface-variant-dark;
+                transform: scale(1.25);
+            }
+  
+            &::-webkit-slider-runnable-track {
+                -webkit-appearance: none;
+                box-shadow: none;
+                border: none;
+                background: transparent;
+            }
+        }
+    }
+}
+
+// Modals
+.modal{
+    &-fullscreen{
+        .modal-window::after{box-shadow: unset!important;}
+    }
+    &-window{
+        --modalBackground: @md-sys-color-surface-dark;
+        border-radius: 24px!important; // yes, all of them.
+        background: @md-sys-color-surface-dark!important; //force all modals to have the same background colour
+        box-shadow: unset!important;
+
+        .modal-title{text-align: center;}
+        .modal-content{box-shadow: unset!important;}
+    }
+    &-header :not(.equalizer-panel){
+        align-items: center;
+        justify-content: center;
+        .close-btn{
+            border-radius: 50%;
+            height: 32px!important;
+            width: 32px!important;
+            top: unset!important;
+            margin-right: 10px;
+        }
+    }
+}
+
+// App Drawer
+.app-drawer{
+    overflow: unset!important;
+    background: @md-sys-color-surface-variant-dark;
+    box-shadow: unset;
+    backdrop-filter: unset;
+}
+.lyric-footer{
+    background: @md-sys-color-surface-variant-dark;
+    border-radius: 0 0 12px 12px;
+}
+
+.autoplay{
+    .infinity{
+        &::after{
+            font-family: 'Material Icons Round';
+            font-size: 10pt;
+            color: @md-sys-color-on-surface-variant-dark;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            content: 'all_inclusive';
+        }
+    }
+}
+
+// Navigation Bar
+#navigation-bar{
+    mix-blend-mode: unset!important;
+    backdrop-filter: unset!important;
+    background: transparent!important;
+    width: 86px;
+    height: 62px;
+    .nav-item{
+        height: 32px;
+        width: 32px;
+        border-radius: 16px;
+        color: @md-sys-color-surface-variant-dark;
+        background: @md-sys-color-on-surface-variant-dark;
+        z-index: 8;
+        &:hover{
+            color: lighten(@md-sys-color-surface-variant-dark, 7%);
+            background: @md-sys-color-on-surface-variant-dark;
+            svg{
+                color: unset!important;
+            }
+        }
+    }
+}
+// Context Menus
+.menu{
+    &-panel &-panel-body{
+        background: @md-sys-color-surface-variant-dark;
+        box-shadow: 0 8px 40px rgb(0 0 0 / 0.55);
+    }
+    &-panel &-body{
+        padding-bottom: 8px;
+    }
+    &-option{
+        &:hover{background: fade(@md-sys-color-on-surface-variant-dark, 15%)!important;}
+    }
+    &-panel-body &-header-body{
+        background: rgb(200 200 200 / 5%); // luke please change this later istg if you forget this lol
+    }
+    &-panel{
+        .sidebar-icon > .svg-icon{
+            --color: @md-sys-color-on-surface-variant-dark;
+        }
+    }
+}
+// the pages
+.content-inner{
+    .row{
+        // fix bug with text shift
+        margin-left: calc(-0.5 * var(--bs-gutter-x))!important;
+    }
+    // theme creator information
+    &.about-page{
+        .row{
+            .col{
+                p:nth-child(4)::after {
+                    white-space: pre;
+                    margin-block-start: 1em;
+                    margin-block-end: 1em;
+                    display: block;
+                    content: "loosely-based Google Material You theme (without customisation) by deer#9999\aGMY v0.0.17";
+                }
+            }
+        }
+    }
+    // library header
+    &.library-page{
+        top: 0;
+        .library-header{
+            padding: 0 2em 0 100px;
+            top: 0!important;
+        }
+        .row .col:nth-child(1){
+            margin-right: 10px!important;
+        }
+        .well{
+            margin: 0em 2em 2em 2em;
+        }
+        .search-input{
+            height: 30px;
+        }
+    }
+    &.playlist-page, &.artist-page{
+        .floating-header{
+            top: 0!important;
+            padding: 0 1em 0 100px;
+        }
+    }
+    &.playlist-page.inline-playlist{
+        margin-top: -62px;
+        padding-top: 62px;
+        .playlist-inner{
+            box-shadow: unset!important;
+            border-radius: 16px 16px 0 0;
+            background: @md-sys-color-surface-dark;
+            .floating-header{
+                padding: 1em!important;
+                background: @md-sys-color-surface-dark;
+                border-bottom: unset!important;
+            }
+        }
+    }
+    &.settings-page{
+        padding-top: 20px;
+    }
+    &.podcasts-page{
+        top: 60px;
+        height: calc(100% - 60px); 
+        .podcasts-list .podcasts-search{
+            background: unset!important;
+        }
+    }
+}
+
+.v-hl-svg[data-v-45080727]{
+    background: @md-sys-color-on-surface-variant-dark !important;
+    color: @md-sys-color-surface-variant-dark !important;
+}
+
+.playlist-controls,
+.library-header{
+    .md-btn:nth-child(1), .md-btn:nth-child(2){
+        &::before{
+            font-family: 'Material Icons Round';
+            font-size: 14pt;
+            color: @md-sys-color-on-surface-variant-dark;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-right: 8px;
+        }
+    }
+    .md-btn:nth-child(1)::before{
+        content: 'play_arrow';
+    }
+    .md-btn:nth-child(2)::before{
+        content: 'shuffle';
+    }
+}
+
+.reload-btn{
+    background: @md-sys-color-surface-variant-dark;
+    svg{
+        display: none;
+    }
+    &::before{
+        font-size: 16pt;
+        font-family: 'Material Icons Round';
+        color: @md-sys-color-on-surface-dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        content: 'refresh';
+    }
+}
+
+.md{
+    // buttons :')
+    &-btn{
+        border-radius: 4px; // gotta get those buttons rounded somehow and i dont want to do math :')
+        border: 1px solid @md-sys-color-outline-dark;
+        color: @md-sys-color-on-secondary-container-dark;
+        background: unset;
+        height: 40px;
+        padding: 8px 24px;
+        transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        align-self: center;
+        &.md-btn-icon{
+            line-height: 24px;
+        }
+        &.md-btn-replay--hero{
+            padding: unset!important;
+        }
+        &:hover{
+            filter: unset!important;
+            background: fade(@md-sys-color-primary-dark, @md-sys-state-hover-state-layer-opacity);
+        }
+        &:active{
+            transform: none!important;
+            background: fade(@md-sys-color-primary-dark, @md-sys-state-pressed-state-layer-opacity);
+        }
+        &-primary,
+        &.md-btn-replay,
+        &.md-btn-replay--hero{
+            background: @md-sys-color-primary-container-dark!important;
+            color: @md-sys-color-on-primary-container-dark!important;
+            border: unset!important;
+            // &:hover{
+            //     background: fade(@md-sys-color-primary-container-dark, @md-sys-state-hover-state-layer-opacity)!important;
+            // }
+        }
+    }
+    &-ico-play, &-ico-shuffle, &-ico-remove, &-ico-add { //remove the add remove icons
+        display: none;
+        align-self: unset!important;
+    }
+    //dropdowns
+    &-select{
+        background: unset!important;
+        color: @md-sys-color-on-secondary-container-dark;
+        border: 1px solid @md-sys-color-outline-dark;
+        border-radius: 4px;
+        height: 40px;
+        width: 100%;
+        min-width: 200px;
+        text-overflow: ellipsis;
+        optgroup{
+            border-radius: 24px;
+        }
+    }
+}
+
+// switches
+input[type=checkbox][switch]{
+    width: 32px;
+    height: 14px;
+    transition: background 150ms ease;
+    &:checked{
+        background: @md-sys-color-on-secondary-container-dark;
+        &::before{
+            background: desaturate(@md-sys-color-primary-dark, 15%);
+        }
+        &:active{
+            background: @md-sys-color-on-secondary-container-dark;
+            &::before{
+                left: 13px;
+                background: desaturate(@md-sys-color-primary-dark, 15%);
+            }
+        }
+        &:hover{
+            background: @md-sys-color-on-secondary-container-dark;
+        }
+    }
+    &:active::before{left: -7px};
+    &:not(:checked){
+        background: fade(@md-sys-color-on-secondary-container-dark, 45%);
+        &::before{
+            background: desaturate(@md-sys-color-primary-dark, 45%);
+        }
+    }
+    &::before{
+        top: -6px!important;
+        left: -7px;
+        &:checked{
+            left: 13px;
+        }
+    }
+}
+
+// volume (because it's waaaay too small)
+.app-chrome .app-chrome-item.volume{
+    > input[type=range]{
+        width: 84px;
+    }
+}
+
+// iteration 2
+// #app-chrome{
+//     overflow: visible;
+// }
+// .app-chrome .app-chrome--center {
+//     width: 55%;
+//     position: absolute;
+//     top: 0;
+//     left: 50%;
+//     transform: translate(-50%, 0%);
+//     height: var(--chromeHeight);
+// }
+// .app-chrome .app-chrome--right{
+//     position: absolute;
+//     right: 0;
+//     width: 19%;
+//     height: var(--chromeHeight);
+// }
+// .app-chrome .app-chrome-item.volume{
+//     width: 100%;
+//     margin-right: unset;
+//     > input[type=range]{
+//         position: relative;
+//         left: 15px;
+//         transition: all 150ms ease;
+//         width: 0;
+//         &::-webkit-slider-thumb{
+//             background: transparent;
+//         }
+//     }
+//     &:hover{
+//         > input[type=range]{
+//             width: 100px;
+//             left: 0px;
+//             &::-webkit-slider-thumb{
+//                 background: @md-sys-color-on-surface-variant-dark;
+//             }
+//         }
+//     }
+// }
+
+// iteration 3
+// .app-chrome--right{
+//     padding-left: 130px;
+// }
+// .app-chrome{
+//     overflow: visible!important;
+// }
+// .app-chrome .app-chrome-item.volume{
+//     z-index: 9999999999;
+//     &:hover{
+//         height: 8000px;
+//         > input[type=range]{
+//             opacity: 1;
+//         }
+//     }
+//     > input[type=range]{
+//         z-index: 9999999999;
+//         position: absolute;
+//         opacity: 0;
+//         right: 290px;
+//         transition: all 200ms ease;
+//         width: 100px;
+//         transform: rotate3d(0,0,1,-90deg)
+//     }
+// }
